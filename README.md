@@ -17,8 +17,7 @@ The programs included are:
 - `fizzbuzz.asm` - Original MIPS FizzBuzz program.
 - `fizzbuzz.mhc-ascii` - Machine code stored as readable binary digits.
 - `fizzbuzz.mhc-bin` - Machine code stored as actual binary bytes.
-- `reconstructed_bin/` - Reconstructed assembly and machine-code files generated using the binary format.
-- `reconstructed_ascii/` - Reconstructed assembly and machine-code files generated using the ASCII format.
+- `fizzbuzz_reconstructed.asm` - MIPS assembly reconstructed from machine code.
 
 ## Requirements
 
@@ -41,6 +40,12 @@ java fizzbuzz fizzbuzz.asm
 
 This creates `fizzbuzz.mhc-ascii` and `fizzbuzz.mhc-bin`.
 
+Create folders for the reconstructed programs:
+
+```powershell
+mkdir reconstructed_bin
+mkdir reconstructed_ascii
+```
 **3. Run the disassembler using the binary format:**
 
 ```powershell
@@ -52,8 +57,6 @@ java Disassembler fizzbuzz.mhc-bin reconstructed_bin/fizzbuzz_reconstructed.asm
 ```powershell
 java Disassembler fizzbuzz.mhc-ascii reconstructed_ascii/fizzbuzz_reconstructed.asm
 ```
-
-The `reconstructed_bin` and `reconstructed_ascii` folders must exist before running these commands.
 
 **5. Reassemble the reconstructed programs:**
 
